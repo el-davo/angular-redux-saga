@@ -24,7 +24,6 @@ export class TodoEffects {
     @Effect()
     search$: Observable<Action> = this.actions$
         .ofType(FETCH_TODOS)
-        .debounceTime(300)
         .map(toPayload)
         .switchMap(() => {
             return Observable.of(updateTodos([
