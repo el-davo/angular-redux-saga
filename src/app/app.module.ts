@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { rootReducer } from './root.reducer';
 import { compose } from '@ngrx/core/compose';
+import { FormsModule } from '@angular/forms';
 import { TodoService } from './todo/effects/todo.service';
 import { ReleaseTogglesService } from './release-toggles/effects/release-toggles.service';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import 'clarity-icons/shapes/essential-shapes';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     BrowserAnimationsModule,
     ClarityModule.forRoot(),
     StoreModule.provideStore(compose(...store.store)(rootReducer)),

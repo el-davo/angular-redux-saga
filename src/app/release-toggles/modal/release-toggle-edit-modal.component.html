@@ -4,13 +4,32 @@
         <form>
             <section class="form-block">
                 <div class="form-group">
-                    <label for="formFields_1"></label>
-                    <input type="text" id="formFields_1" placeholder="Email" size="35" disabled>
-                    <input type="text" id="formFields_2" placeholder="Email 2" size="45">
-                    <input type="text" id="formFields_3" placeholder="Email" size="25">
-                    <input type="text" id="formFields_4" placeholder="Email 2">
-                    <input type="text" id="formFields_5" placeholder="Email">
-                    <input type="text" id="formFields_6" placeholder="Email 2">
+                    <label for="toggle-category">Category</label>
+                    <div class="select">
+                        <select id="toggle-category" name="toggle-category">
+                            <option value="Default">Select Employee Type...</option>
+                            <option value="test1">Test 1</option>
+                            <option value="test2">Test 2</option>
+                            <option value="test3">Test 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="toggle-name">Name</label>
+                    <input id="toggle-name" name="toggle-name" type="text" placeholder="Name" size="45" [(ngModel)]="toggle-name">
+                </div>
+
+                <div class="form-group">
+                    <label for="toggle-description">Description</label>
+                    <textarea id="toggle-description" rows="5"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="toggle-active">
+                        <label for="toggle-active">Active</label>
+                    </div>
                 </div>
             </section>
         </form>

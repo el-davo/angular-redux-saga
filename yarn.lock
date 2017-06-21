@@ -4,7 +4,7 @@
 
 "@angular/animations@^4.2.3":
   version "4.2.3"
-  resolved "http://10.60.142.218:15000/@angular%2fanimations/-/animations-4.2.3.tgz#686926a69d0c9c26a9bcad26cd6fbd0245bb6c1b"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.2.3.tgz#686926a69d0c9c26a9bcad26cd6fbd0245bb6c1b"
   dependencies:
     tslib "^1.7.1"
 
@@ -187,7 +187,7 @@
 
 "@webcomponents/custom-elements@1.0.0-alpha.3":
   version "1.0.0-alpha.3"
-  resolved "http://10.60.142.218:15000/@webcomponents%2fcustom-elements/-/custom-elements-1.0.0-alpha.3.tgz#340d8cc8307730540ac92276c9a49149f6fc0116"
+  resolved "https://registry.yarnpkg.com/@webcomponents/custom-elements/-/custom-elements-1.0.0-alpha.3.tgz#340d8cc8307730540ac92276c9a49149f6fc0116"
 
 abbrev@1:
   version "1.1.0"
@@ -582,8 +582,8 @@ bluebird@^3.3.0, bluebird@^3.4.7:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
-  version "4.11.6"
-  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.6.tgz#53344adb14617a13f6e8dd2ce28905d1c0ba3215"
+  version "4.11.7"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.7.tgz#ddb048e50d9482790094c13eb3fcfc833ce7ab46"
 
 body-parser@^1.16.1:
   version "1.17.2"
@@ -814,17 +814,17 @@ clap@^1.0.9:
 
 clarity-angular@^0.10.0-alpha:
   version "0.10.0-alpha"
-  resolved "http://10.60.142.218:15000/clarity-angular/-/clarity-angular-0.10.0-alpha.tgz#ecab100c92228b10e9b8df40c5fc9aa879c6193e"
+  resolved "https://registry.yarnpkg.com/clarity-angular/-/clarity-angular-0.10.0-alpha.tgz#ecab100c92228b10e9b8df40c5fc9aa879c6193e"
 
 clarity-icons@^0.10.0-alpha:
   version "0.10.0-alpha"
-  resolved "http://10.60.142.218:15000/clarity-icons/-/clarity-icons-0.10.0-alpha.tgz#5e534c81143829033b1503be57b70e63136c527b"
+  resolved "https://registry.yarnpkg.com/clarity-icons/-/clarity-icons-0.10.0-alpha.tgz#5e534c81143829033b1503be57b70e63136c527b"
   dependencies:
     dompurify "^0.9.0"
 
 clarity-ui@^0.10.0-alpha:
   version "0.10.0-alpha"
-  resolved "http://10.60.142.218:15000/clarity-ui/-/clarity-ui-0.10.0-alpha.tgz#cc12c77af94d527c1b8a3cfa7aee0e152d4261fe"
+  resolved "https://registry.yarnpkg.com/clarity-ui/-/clarity-ui-0.10.0-alpha.tgz#cc12c77af94d527c1b8a3cfa7aee0e152d4261fe"
 
 clean-css@4.1.x:
   version "4.1.4"
@@ -1402,7 +1402,7 @@ domhandler@2.1:
 
 dompurify@^0.9.0:
   version "0.9.0"
-  resolved "http://10.60.142.218:15000/dompurify/-/dompurify-0.9.0.tgz#470f9dd95657a644a84be1ed950677946259d055"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-0.9.0.tgz#470f9dd95657a644a84be1ed950677946259d055"
 
 domutils@1.1:
   version "1.1.6"
@@ -2515,8 +2515,8 @@ jasmine-core@~2.6.0, jasmine-core@~2.6.2:
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.6.4.tgz#dec926cd0a9fa287fb6db5c755fa487e74cecac5"
 
 jasmine-spec-reporter@~4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/jasmine-spec-reporter/-/jasmine-spec-reporter-4.1.0.tgz#b8aa7584df58e4dab61acdbefb76d096aa38663f"
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/jasmine-spec-reporter/-/jasmine-spec-reporter-4.1.1.tgz#5a6d58ab5d61bea7309fbc279239511756b1b588"
   dependencies:
     colors "1.1.2"
 
@@ -3002,7 +3002,7 @@ ms@2.0.0:
 
 mutationobserver-shim@0.3.2:
   version "0.3.2"
-  resolved "http://10.60.142.218:15000/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#f4d5dae7a4971a2207914fb5a90ebd514b65acca"
+  resolved "https://registry.yarnpkg.com/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#f4d5dae7a4971a2207914fb5a90ebd514b65acca"
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -3898,8 +3898,8 @@ readable-stream@1.0, readable-stream@~1.0.2:
     string_decoder "~0.10.x"
 
 readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.6, readable-stream@^2.2.9:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.0.tgz#640f5dcda88c91a8dc60787145629170813a1ed2"
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.1.tgz#84e26965bb9e785535ed256e8d38e92c69f09d10"
   dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.3"
