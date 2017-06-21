@@ -6,7 +6,7 @@ import { fetchTodos } from './todo.actions';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  styleUrls: []
 })
 export class TodoComponent implements OnInit {
 
