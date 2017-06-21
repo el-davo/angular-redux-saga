@@ -20,3 +20,7 @@ export function showEditToggleModal(releaseToggle: ReleaseToggle) {
 export function hideEditToggleModal() {
     return { type: actionTypes.HIDE_EDIT_TOGGLE_MODAL };
 }
+
+export function editToggleNameChange(value: string) {
+    return { type: actionTypes.EDIT_TOGGLE_NAME_CHANGE, payload: value };
+}
