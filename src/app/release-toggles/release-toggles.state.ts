@@ -13,6 +13,7 @@ export interface ReleaseToggleState {
 }
 
 export interface ReleaseToggle {
+    id: string;
     category: string;
     name: string;
     description: string;

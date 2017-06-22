@@ -13,35 +13,79 @@ import { empty } from 'rxjs/observable/empty';
 import { of } from 'rxjs/observable/of';
 
 import { ReleaseTogglesService } from './release-toggles.service';
-import { FETCH_RELEASE_TOGGLES } from '../release-toggles.action-types';
-import { updateReleaseToggles } from '../release-toggles.actions';
+import { FETCH_RELEASE_TOGGLES, REQUEST_TOGGLE_EDIT } from '../release-toggles.action-types';
+import { updateReleaseToggles, requestToggleEditSuccess } from '../release-toggles.actions';
 
 @Injectable()
 export class ReleaseTogglesEffects {
 
-    constructor(private actions$: Actions, private releaseTogglesService: ReleaseTogglesService) { }
-
     @Effect()
-    search$: Observable<Action> = this.actions$
+    getReleaseToggles$: Observable<Action> = this.actions$
         .ofType(FETCH_RELEASE_TOGGLES)
         .map(toPayload)
         .debounceTime(1000)
         .switchMap(() => {
             return Observable.of(updateReleaseToggles([
                 {
-                    category: 'testCategory',
-                    name: 'testName',
-                    description: 'testDescription',
+                    id: 'abc1',
+                    category: 'Dashboard',
+                    name: 'test1_name',
                     active: true,
+                    description: 'test1_description',
                     created: 'Today'
-                }, {
-                    category: 'testCategory',
-                    name: 'testName',
-                    description: 'testDescription',
+                },
+                {
+                    id: 'abc2',
+                    category: 'Unity',
+                    name: 'test2_name',
+                    active: false,
+                    description: 'test2_description',
+                    created: 'Yesterday'
+                },
+                {
+                    id: 'abc3',
+                    category: 'Unity',
+                    name: 'test2_name',
                     active: true,
-                    created: 'Today'
+                    description: 'test2_description',
+                    created: 'Yesterday'
+                },
+                {
+                    id: 'abc4',
+                    category: 'Unity',
+                    name: 'test2_name',
+                    active: true,
+                    description: 'test2_description',
+                    created: 'Yesterday'
+                },
+                {
+                    id: 'abc5',
+                    category: 'Unity',
+                    name: 'test2_name',
+                    active: false,
+                    description: 'test2_description',
+                    created: 'Yesterday'
+                },
+                {
+                    id: 'abc6',
+                    category: 'Unity',
+                    name: 'test2_name',
+                    active: true,
+                    description: 'test2_description',
+                    created: 'Yesterday'
                 }
             ]));
         });
+
+    @Effect()
+    editReleaseToggle$: Observable<Action> = this.actions$
+        .ofType(REQUEST_TOGGLE_EDIT)
+        .map(toPayload)
+        .debounceTime(1000)
+        .switchMap((releaseToggle) => {
+            return Observable.of(requestToggleEditSuccess(releaseToggle));
+        });
+
+    constructor(private actions$: Actions, private releaseTogglesService: ReleaseTogglesService) { }
 
 }
