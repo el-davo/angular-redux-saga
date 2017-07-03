@@ -9,7 +9,7 @@ describe('Release Toggles Actions', () => {
     });
 
     it('should update release toggles', () => {
-        let toggles = [{}, {}] as ReleaseToggle[];
+        const toggles = [{}, {}] as ReleaseToggle[];
         expect(actions.updateReleaseToggles(toggles)).toEqual({ type: actionTypes.UPDATE_RELEASE_TOGGLES, payload: toggles });
     });
 
@@ -18,7 +18,7 @@ describe('Release Toggles Actions', () => {
     });
 
     it('should show the edit toggle modal', () => {
-        let toggle = { active: true } as ReleaseToggle;
+        const toggle = { active: true } as ReleaseToggle;
         expect(actions.showEditToggleModal(toggle)).toEqual({ type: actionTypes.SHOW_EDIT_TOGGLE_MODAL, payload: toggle });
     });
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { State, Store } from "@ngrx/store";
+import { State, Store } from '@ngrx/store';
 import { ReleaseToggleState, ReleaseToggle } from './release-toggles.state';
 import { fetchReleaseToggles, showEditToggleModal } from './release-toggles.actions';
 
