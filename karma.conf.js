@@ -10,10 +10,11 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular/cli/plugins/karma')
+      require('@angular/cli/plugins/karma'),
+      require('karma-phantomjs-launcher')
     ],
     client:{
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false
     },
     coverageIstanbulReporter: {
       reports: [ 'html', 'lcovonly' ],
@@ -27,7 +28,19 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false
+    browsers: ['PhantomJS_CUSTOM'],
+    singleRun: false,
+    customLaunchers: {
+      PhantomJS_CUSTOM: {
+        base: 'PhantomJS',
+        flags: [
+          '--web-security=false',
+          '--load-images=false'
+        ]
+      }
+    },
+    phantomjsLauncher: {
+      exitOnResourceError: true
+    }
   });
 };
