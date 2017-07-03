@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/test_results
 
 # dependencies
 /node_modules
@@ -32,6 +33,7 @@
 npm-debug.log
 testem.log
 /typings
+yarn-error.log
 
 # e2e
 /e2e/*.js

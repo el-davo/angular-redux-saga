@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test -sr -cc",
+    "test:watch": "ng test -cc",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prod": "http-server dist -p 3000"
@@ -57,6 +58,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
-    "typescript": "^2.4.1"
+    "typescript": "2.3.3"
   }
 }

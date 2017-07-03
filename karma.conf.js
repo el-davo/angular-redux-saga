@@ -1,23 +1,23 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
-module.exports = function (config) {
+module.exports = config => {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('@angular/cli/plugins/karma'),
-      require('karma-nightmare')
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-jasmine-html-reporter',
+      'karma-coverage-istanbul-reporter',
+      '@angular/cli/plugins/karma',
+      'karma-nightmare'
     ],
-    client:{
+    client: {
       clearContext: false
     },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
     angularCli: {
@@ -29,6 +29,10 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Nightmare'],
-    singleRun: false
+    singleRun: false,
+    coverageIstanbulReporter: {
+      dir: 'test_results/coverage',
+      reports: ['html', 'lcovonly', 'text-summary']
+    }
   });
 };
