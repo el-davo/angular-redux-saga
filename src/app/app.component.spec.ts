@@ -33,10 +33,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('app-release-toggles')).toBeTruthy();
   }));
 
-  for(let i = 0; i < 100; i++) {
-    it('should create the app', async(() => {
-      expect(app).toBeTruthy();
-    }));
-  }
-
 });

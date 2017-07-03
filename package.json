@@ -51,7 +51,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-nightmare": "^0.4.9",
     "ngrx-store-freeze": "^0.1.9",
     "ngrx-store-logger": "^0.1.8",
     "protractor": "~5.1.2",
