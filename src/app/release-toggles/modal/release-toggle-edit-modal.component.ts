@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { State, Store } from '@ngrx/store';
 import { ReleaseToggleState, ReleaseToggle } from '../release-toggles.state';
-import { hideEditToggleModal, editToggleCategoryChange, editToggleNameChange, editToggleDescriptionChange, editToggleActiveChange, requestToggleEdit } from '../release-toggles.actions';
+import {
+    hideEditToggleModal,
+    editToggleCategoryChange,
+    editToggleNameChange,
+    editToggleDescriptionChange,
+    editToggleActiveChange,
+    requestToggleEdit
+} from '../release-toggles.actions';
 
 @Component({
     selector: 'app-release-toggle-edit-modal',
