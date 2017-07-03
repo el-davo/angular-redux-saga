@@ -11,7 +11,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma'),
-      require('karma-phantomjs-launcher')
+      require('karma-nightmare')
     ],
     client:{
       clearContext: false
@@ -28,19 +28,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS_CUSTOM'],
-    singleRun: false,
-    customLaunchers: {
-      PhantomJS_CUSTOM: {
-        base: 'PhantomJS',
-        flags: [
-          '--web-security=false',
-          '--load-images=false'
-        ]
-      }
-    },
-    phantomjsLauncher: {
-      exitOnResourceError: true
-    }
+    browsers: ['Nightmare'],
+    singleRun: false
   });
 };
