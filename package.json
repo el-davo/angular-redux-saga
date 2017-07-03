@@ -9,6 +9,7 @@
     "test": "ng test -sr -cc",
     "test:watch": "ng test -cc",
     "lint": "ng lint",
+    "lint:fix": "npm run lint -- -fix",
     "e2e": "ng e2e",
     "prod": "http-server dist -p 3000"
   },
