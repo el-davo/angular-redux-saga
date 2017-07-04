@@ -4,14 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "concurrently --kill-others --raw \"ts-node ./src/stubs/stub-server.ts\" \"ng serve --open\"",
     "build": "ng build",
     "test": "ng test -sr -cc",
     "test:watch": "ng test -cc",
     "lint": "ng lint",
     "lint:fix": "npm run lint -- -fix",
     "e2e": "ng e2e",
-    "stub": "ts-node ./src/stubs/stub-server.ts",
     "prod": "http-server dist -p 3000"
   },
   "private": true,
@@ -45,6 +44,7 @@
     "@ngrx/store-devtools": "^3.2.4",
     "@types/jasmine": "2.5.45",
     "codelyzer": "~3.0.1",
+    "concurrently": "^3.5.0",
     "faker": "^4.1.0",
     "http-server": "^0.10.0",
     "jasmine-core": "~2.6.2",
