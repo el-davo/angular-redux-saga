@@ -2,9 +2,8 @@ import { create, defaults, bodyParser, router } from 'json-server';
 import { db } from './db';
 
 const server = create();
-const middleWares = defaults();
 
-server.use(middleWares);
+server.use(defaults());
 server.use(bodyParser);
 
 // Microservices
