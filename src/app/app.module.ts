@@ -17,6 +17,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';
 import { ClarityModule } from 'clarity-angular';
 import { ReleaseTogglesEffects } from './release-toggles/effects/release-toggles.effects';
+import { StubModule } from '../stubs/index.stub';
 
 import 'clarity-icons';
 import 'clarity-icons/shapes/essential-shapes';
@@ -35,6 +36,7 @@ export function appReducer(state: any, action: any) {
     ReleaseToggleEditModalComponent
   ],
   imports: [
+    StubModule,
     BrowserModule,
     HttpModule,
     FormsModule,

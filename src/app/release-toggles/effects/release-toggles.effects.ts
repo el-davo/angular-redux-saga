@@ -14,7 +14,7 @@ import { of } from 'rxjs/observable/of';
 
 import { ReleaseTogglesService } from './release-toggles.service';
 import { FETCH_RELEASE_TOGGLES, REQUEST_TOGGLE_EDIT } from '../release-toggles.action-types';
-import { updateReleaseToggles, requestToggleEditSuccess } from '../release-toggles.actions';
+import { updateReleaseToggles, requestToggleEditSuccess, fetchReleaseTogglesFailed } from '../release-toggles.actions';
 
 @Injectable()
 export class ReleaseTogglesEffects {
@@ -25,56 +25,9 @@ export class ReleaseTogglesEffects {
         .map(toPayload)
         .debounceTime(1000)
         .switchMap(() => {
-            return Observable.of(updateReleaseToggles([
-                {
-                    id: 'abc1',
-                    category: 'Dashboard',
-                    name: 'test1_name',
-                    active: true,
-                    description: 'test1_description',
-                    created: 'Today'
-                },
-                {
-                    id: 'abc2',
-                    category: 'Unity',
-                    name: 'test2_name',
-                    active: false,
-                    description: 'test2_description',
-                    created: 'Yesterday'
-                },
-                {
-                    id: 'abc3',
-                    category: 'Unity',
-                    name: 'test2_name',
-                    active: true,
-                    description: 'test2_description',
-                    created: 'Yesterday'
-                },
-                {
-                    id: 'abc4',
-                    category: 'Unity',
-                    name: 'test2_name',
-                    active: true,
-                    description: 'test2_description',
-                    created: 'Yesterday'
-                },
-                {
-                    id: 'abc5',
-                    category: 'Unity',
-                    name: 'test2_name',
-                    active: false,
-                    description: 'test2_description',
-                    created: 'Yesterday'
-                },
-                {
-                    id: 'abc6',
-                    category: 'Unity',
-                    name: 'test2_name',
-                    active: true,
-                    description: 'test2_description',
-                    created: 'Yesterday'
-                }
-            ]));
+            return this.releaseTogglesService.fetchReleaseToggles()
+                .map(releaseToggles => updateReleaseToggles(releaseToggles))
+                .catch(err => Observable.of(fetchReleaseTogglesFailed()));
         });
 
     @Effect()

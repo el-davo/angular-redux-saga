@@ -9,8 +9,15 @@ export class ReleaseTogglesService {
 
     constructor(private http: Http) { }
 
-    fetchTodos(queryTitle: string): Observable<ReleaseToggle[]> {
-        return this.http.get(`http://`)
-            .map(res => res.json().items || []);
+    fetchReleaseToggles(): Observable<ReleaseToggle[]> {
+         this.http.get(`/titan-user-data/currentUser`)
+            .map(res => {
+                console.log('======================================');
+                console.log(res.json().data);
+                console.log('======================================');
+            });
+
+        return this.http.get(`/titan-raw-data-management/releaseToggles`)
+            .map(res => res.json().data || []);
     }
 }
