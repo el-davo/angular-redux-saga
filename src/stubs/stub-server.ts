@@ -1,16 +1,15 @@
-import * as jsonServer from 'json-server';
-import { info } from 'winston';
+import { create, defaults, bodyParser, router } from 'json-server';
 import { db } from './db';
 
-const server = jsonServer.create();
-const middleWares = jsonServer.defaults();
+const server = create();
+const middleWares = defaults();
 
 server.use(middleWares);
-server.use(jsonServer.bodyParser);
+server.use(bodyParser);
 
 // Microservices
 Object.keys(db).map(key => {
-    server.use(key, jsonServer.router(db[key]));
+    server.use(key, router(db[key]));
 });
-server.use(middleWares);
+
 server.listen(3001);
