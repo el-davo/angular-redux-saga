@@ -11,6 +11,7 @@
     "lint": "ng lint",
     "lint:fix": "npm run lint -- -fix",
     "e2e": "ng e2e",
+    "stub": "ts-node ./src/stubs/stub-server.ts",
     "prod": "http-server dist -p 3000"
   },
   "private": true,
@@ -44,9 +45,11 @@
     "@ngrx/store-devtools": "^3.2.4",
     "@types/jasmine": "2.5.45",
     "codelyzer": "~3.0.1",
+    "faker": "^4.1.0",
     "http-server": "^0.10.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
+    "json-server": "^0.10.3",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.1.1",
     "karma-cli": "~1.0.1",
@@ -57,8 +60,10 @@
     "ngrx-store-freeze": "^0.1.9",
     "ngrx-store-logger": "^0.1.8",
     "protractor": "~5.1.2",
+    "rosie": "^1.6.0",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
-    "typescript": "2.3.3"
+    "typescript": "2.3.3",
+    "winston": "^2.3.1"
   }
 }
