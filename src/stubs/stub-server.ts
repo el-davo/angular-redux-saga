@@ -7,8 +7,6 @@ server.use(defaults());
 server.use(bodyParser);
 
 // Microservices
-Object.keys(db).map(key => {
-    server.use(key, router(db[key]));
-});
+Object.keys(db).map(key => server.use(key, router(db[key])));
 
 server.listen(3001);
