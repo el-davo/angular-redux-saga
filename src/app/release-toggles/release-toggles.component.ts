@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { State, Store } from '@ngrx/store';
-import { ReleaseToggleState, ReleaseToggle } from './release-toggles.state';
-import { fetchReleaseToggles, showEditToggleModal } from './release-toggles.actions';
+import {Component, OnInit} from '@angular/core';
+import {ReleaseToggleState, ReleaseToggle} from './release-toggles.state';
+import {ReleaseTogglesActions} from './release-toggles.actions';
+import {select, dispatch} from '@angular-redux/store';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
-    selector: 'app-release-toggles',
-    templateUrl: './release-toggles.component.html',
-    styleUrls: []
+  selector: 'app-release-toggles',
+  templateUrl: './release-toggles.component.html'
 })
 export class ReleaseTogglesComponent implements OnInit {
 
-    public releaseToggles: ReleaseToggleState;
+  @select() readonly releaseToggles: Observable<ReleaseToggleState>;
 
-    constructor(private _store: Store<State<ReleaseToggleState>>) {
-        _store.select('releaseToggles').subscribe(state => this.releaseToggles = state as ReleaseToggleState);
-    }
+  constructor(private releaseTogglesActions: ReleaseTogglesActions) {
+  }
 
-    ngOnInit() {
-        this._store.dispatch(fetchReleaseToggles());
-    }
+  @dispatch()
+  ngOnInit() {
+    return this.releaseTogglesActions.fetchReleaseToggles();
+  }
 
-    showEditToggleModal(releaseToggle: ReleaseToggle) {
-        this._store.dispatch(showEditToggleModal(releaseToggle));
-    }
+  @dispatch()
+  showEditToggleModal(releaseToggle: ReleaseToggle) {
+    return this.releaseTogglesActions.showEditToggleModal(releaseToggle);
+  }
 
 }

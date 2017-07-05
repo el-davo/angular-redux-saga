@@ -1,51 +1,52 @@
-import { toPayload } from '@ngrx/effects';
+import {Injectable} from '@angular/core';
+import {Action} from 'redux';
 import * as actionTypes from './release-toggles.action-types';
-import { ReleaseToggle } from './release-toggles.state';
+import {ReleaseToggle} from './release-toggles.state';
 
-export function fetchReleaseToggles() {
-    return { type: actionTypes.FETCH_RELEASE_TOGGLES };
-}
+@Injectable()
+export class ReleaseTogglesActions {
 
-export function updateReleaseToggles(releaseToggles: ReleaseToggle[]) {
-    return { type: actionTypes.UPDATE_RELEASE_TOGGLES, payload: releaseToggles };
-}
+  fetchReleaseToggles(): Action {
+    return {type: actionTypes.FETCH_RELEASE_TOGGLES};
+  }
 
-export function fetchReleaseTogglesFailed() {
-    return { type: actionTypes.FETCH_RELEASE_TOGGLES_FAILED };
-}
+  updateReleaseToggles(releaseToggles: ReleaseToggle[]) {
+    return {type: actionTypes.UPDATE_RELEASE_TOGGLES, releaseToggles};
+  }
 
-export function showEditToggleModal(releaseToggle: ReleaseToggle) {
-    return { type: actionTypes.SHOW_EDIT_TOGGLE_MODAL, payload: releaseToggle };
-}
+  fetchReleaseTogglesFailed(): Action {
+    return {type: actionTypes.FETCH_RELEASE_TOGGLES_FAILED};
+  }
 
-export function hideEditToggleModal() {
-    return { type: actionTypes.HIDE_EDIT_TOGGLE_MODAL };
-}
+  showEditToggleModal(releaseToggle: ReleaseToggle) {
+    return {type: actionTypes.SHOW_EDIT_TOGGLE_MODAL, releaseToggle};
+  }
 
-export function editToggleCategoryChange(value: string) {
-    return { type: actionTypes.EDIT_TOGGLE_CATEGORY_CHANGE, payload: value };
-}
+  hideEditToggleModal(): Action {
+    return {type: actionTypes.HIDE_EDIT_TOGGLE_MODAL};
+  }
 
-export function editToggleNameChange(value: string) {
-    return { type: actionTypes.EDIT_TOGGLE_NAME_CHANGE, payload: value };
-}
+  editToggleCategoryChange(value: string) {
+    return {type: actionTypes.EDIT_TOGGLE_CATEGORY_CHANGE, value};
+  }
 
-export function editToggleDescriptionChange(value: string) {
-    return { type: actionTypes.EDIT_TOGGLE_DESCRIPTION_CHANGE, payload: value };
-}
+  editToggleNameChange(value: string) {
+    return {type: actionTypes.EDIT_TOGGLE_NAME_CHANGE, value};
+  }
 
-export function editToggleActiveChange() {
-    return { type: actionTypes.EDIT_TOGGLE_ACTIVE_CHANGED };
-}
+  editToggleDescriptionChange(value: string) {
+    return {type: actionTypes.EDIT_TOGGLE_DESCRIPTION_CHANGE, value};
+  }
 
-export function requestToggleEdit(releaseToggle: ReleaseToggle) {
-    return { type: actionTypes.REQUEST_TOGGLE_EDIT, payload: releaseToggle };
-}
+  editToggleActiveChange(): Action {
+    return {type: actionTypes.EDIT_TOGGLE_ACTIVE_CHANGED};
+  }
 
-export function requestToggleEditSuccess(releaseToggle: ReleaseToggle) {
-    return { type: actionTypes.REQUEST_TOGGLE_EDIT_SUCCESS, payload: releaseToggle };
-}
+  requestToggleEdit() {
+    return {type: actionTypes.REQUEST_TOGGLE_EDIT};
+  }
 
-export function requestToggleEditFailed(releaseToggle: ReleaseToggle) {
-    return { type: actionTypes.REQUEST_TOGGLE_EDIT_FAILED, payload: releaseToggle };
+  requestToggleEditSuccess() {
+    return {type: actionTypes.REQUEST_TOGGLE_EDIT_SUCCESS};
+  }
 }
