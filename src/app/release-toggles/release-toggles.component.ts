@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ReleaseToggleState, ReleaseToggle} from './release-toggles.state';
 import {ReleaseTogglesActions} from './release-toggles.actions';
-import {NgRedux, select} from '@angular-redux/store';
+import {select, dispatch, NgRedux} from '@angular-redux/store';
 import {Observable} from 'rxjs/Observable';
 
 @Component({
@@ -18,12 +18,14 @@ export class ReleaseTogglesComponent implements OnInit {
   constructor(private ngRedux: NgRedux<ReleaseToggleState>, private releaseTogglesActions: ReleaseTogglesActions) {
   }
 
+  @dispatch()
   ngOnInit() {
-    this.ngRedux.dispatch(this.releaseTogglesActions.fetchReleaseToggles());
+    return this.releaseTogglesActions.fetchReleaseToggles();
   }
 
+  @dispatch()
   showEditToggleModal(releaseToggle: ReleaseToggle) {
-    this.ngRedux.dispatch(this.releaseTogglesActions.showEditToggleModal(releaseToggle));
+    return this.releaseTogglesActions.showEditToggleModal(releaseToggle);
   }
 
 }

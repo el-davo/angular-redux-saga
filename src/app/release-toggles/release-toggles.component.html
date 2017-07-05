@@ -1,19 +1,21 @@
 <div class="row">
     <div class="col-xs-12">
-        <clr-datagrid id="release-toggles-list-table" style="margin: 10px;" [clrDgLoading]="releaseToggles.isFetchingReleaseToggles | async">
+      <div>
+      </div>
+        <clr-datagrid id="release-toggles-list-table" style="margin: 10px;" [clrDgLoading]="(releaseToggles | async)?.isFetchingReleaseToggles">
             <clr-dg-column>Category</clr-dg-column>
             <clr-dg-column>Name</clr-dg-column>
             <clr-dg-column>Description</clr-dg-column>
             <clr-dg-column>Active</clr-dg-column>
             <clr-dg-column>Created</clr-dg-column>
 
-            <clr-dg-row *ngFor="let releaseToggle of releaseToggles.releaseToggles">
+            <clr-dg-row *ngFor="let releaseToggle of (releaseToggles | async)?.releaseToggles">
                 <clr-dg-cell>{{releaseToggle.category}}</clr-dg-cell>
                 <clr-dg-cell>{{releaseToggle.name}}</clr-dg-cell>
                 <clr-dg-cell>{{releaseToggle.description}}</clr-dg-cell>
                 <clr-dg-cell>
                     <div class="toggle-switch">
-                        <input type="checkbox" id="toggle-active" [checked]="releaseToggle.active">
+                        <input type="checkbox" id="toggle-active" [checked]="releaseToggle.active | async">
                         <label for="toggle-active"></label>
                     </div>
                 </clr-dg-cell>
