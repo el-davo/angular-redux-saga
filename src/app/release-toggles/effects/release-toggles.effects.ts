@@ -9,8 +9,6 @@ import { Injectable } from '@angular/core';
 import { Effect, Actions, toPayload } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { empty } from 'rxjs/observable/empty';
-import { of } from 'rxjs/observable/of';
 
 import { ReleaseTogglesService } from './release-toggles.service';
 import { FETCH_RELEASE_TOGGLES, REQUEST_TOGGLE_EDIT } from '../release-toggles.action-types';
