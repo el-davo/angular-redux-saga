@@ -6,10 +6,7 @@ import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-release-toggle-edit-modal',
-  templateUrl: './release-toggle-edit-modal.component.html',
-  providers: [
-    ReleaseTogglesActions
-  ]
+  templateUrl: './release-toggle-edit-modal.component.html'
 })
 export class ReleaseToggleEditModalComponent {
 

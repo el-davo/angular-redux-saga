@@ -1,5 +1,5 @@
 export const releaseToggleState = {
-    isFetchingReleaseToggles: true,
+    isFetchingReleaseToggles: false,
     releaseToggles: [],
     showEditToggleModal: false,
     editReleaseToggle: null
