@@ -15,7 +15,7 @@
                 <clr-dg-cell>{{releaseToggle.description}}</clr-dg-cell>
                 <clr-dg-cell>
                     <div class="toggle-switch">
-                        <input type="checkbox" id="toggle-active" [checked]="(releaseToggles | async).active">
+                        <input type="checkbox" id="toggle-active" [checked]="releaseToggle.active">
                         <label for="toggle-active"></label>
                     </div>
                 </clr-dg-cell>
@@ -25,7 +25,7 @@
                 </clr-dg-action-overflow>
             </clr-dg-row>
 
-            <clr-dg-footer>{{(releaseToggles.releaseToggles || []).length}} Release Toggles</clr-dg-footer>
+            <clr-dg-footer>{{(releaseToggles | async).releaseToggles.length}} Release Toggles</clr-dg-footer>
         </clr-datagrid>
     </div>
 
