@@ -12,12 +12,11 @@ import { Observable } from 'rxjs/Observable';
 
 import { ReleaseTogglesService } from './release-toggles.service';
 import { FETCH_RELEASE_TOGGLES, REQUEST_TOGGLE_EDIT } from '../release-toggles.action-types';
-import { updateReleaseToggles, requestToggleEditSuccess, fetchReleaseTogglesFailed } from '../release-toggles.actions';
 
 @Injectable()
 export class ReleaseTogglesEffects {
 
-    @Effect()
+    /*@Effect()
     getReleaseToggles$: Observable<Action> = this.actions$
         .ofType(FETCH_RELEASE_TOGGLES)
         .map(toPayload)
@@ -37,6 +36,6 @@ export class ReleaseTogglesEffects {
             return Observable.of(requestToggleEditSuccess(releaseToggle));
         });
 
-    constructor(private actions$: Actions, private releaseTogglesService: ReleaseTogglesService) { }
+    constructor(private actions$: Actions, private releaseTogglesService: ReleaseTogglesService) { }*/
 
 }

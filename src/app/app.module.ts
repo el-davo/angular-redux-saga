@@ -4,7 +4,7 @@ import {NgReduxModule, NgRedux} from '@angular-redux/store';
 import {createLogger} from 'redux-logger';
 import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {rootReducer, AppState} from './root.reducer';
+import {rootReducer} from './root.reducer';
 import {FormsModule} from '@angular/forms';
 import {environment} from '../environments/environment';
 import {ReleaseTogglesService} from './release-toggles/effects/release-toggles.service';
@@ -12,6 +12,7 @@ import {AppComponent} from './app.component';
 import {ReleaseTogglesComponent} from './release-toggles/release-toggles.component';
 import {ReleaseToggleEditModalComponent} from './release-toggles/modal/release-toggle-edit-modal.component';
 import {ClarityModule} from 'clarity-angular';
+import {ReleaseTogglesActions} from './release-toggles/release-toggles.actions';
 
 import 'clarity-icons';
 import 'clarity-icons/shapes/essential-shapes';
@@ -31,7 +32,8 @@ import 'clarity-icons/shapes/essential-shapes';
     NgReduxModule
   ],
   providers: [
-    ReleaseTogglesService
+    ReleaseTogglesService,
+    ReleaseTogglesActions
   ],
   bootstrap: [AppComponent]
 })

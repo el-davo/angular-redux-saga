@@ -1,50 +1,45 @@
 import {Component} from '@angular/core';
-import {State, Store} from '@ngrx/store';
 import {ReleaseToggleState} from '../release-toggles.state';
-import {
-  hideEditToggleModal,
-  editToggleCategoryChange,
-  editToggleNameChange,
-  editToggleDescriptionChange,
-  editToggleActiveChange,
-  requestToggleEdit
-} from '../release-toggles.actions';
+import {ReleaseTogglesActions} from '../release-toggles.actions';
+import {NgRedux, select} from '@angular-redux/store';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-release-toggle-edit-modal',
   templateUrl: './release-toggle-edit-modal.component.html',
-  styleUrls: []
+  providers: [
+    ReleaseTogglesActions
+  ]
 })
 export class ReleaseToggleEditModalComponent {
 
-  public releaseToggles: ReleaseToggleState;
+  @select() readonly releaseToggles: Observable<ReleaseToggleState>;
 
-  constructor(private _store: Store<State<ReleaseToggleState>>) {
-    _store.select('releaseToggles').subscribe(state => this.releaseToggles = state as ReleaseToggleState);
+  constructor(private ngRedux: NgRedux<ReleaseToggleState>, private releaseTogglesActions: ReleaseTogglesActions) {
   }
 
   hideEditToggleModal() {
-    this._store.dispatch(hideEditToggleModal());
+    this.ngRedux.dispatch(this.releaseTogglesActions.hideEditToggleModal());
   }
 
   updateToggleCategory(value: string) {
-    this._store.dispatch(editToggleCategoryChange(value));
+    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleCategoryChange(value));
   }
 
   updateToggleName(value: string) {
-    this._store.dispatch(editToggleNameChange(value));
+    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleNameChange(value));
   }
 
   updateToggleDescription(value: string) {
-    this._store.dispatch(editToggleDescriptionChange(value));
+    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleDescriptionChange(value));
   }
 
   updateToggleActive() {
-    this._store.dispatch(editToggleActiveChange());
+    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleActiveChange());
   }
 
   requestToggleEdit() {
-    this._store.dispatch(requestToggleEdit(this.releaseToggles.editReleaseToggle));
+    this.ngRedux.dispatch(this.releaseTogglesActions.requestToggleEdit());
     this.hideEditToggleModal();
   }
 }

@@ -6,7 +6,7 @@
                 <div class="form-group">
                     <label for="toggle-category">Category</label>
                     <div class="select">
-                        <select id="toggle-category" name="toggle-category" [value]="(releaseToggles.editReleaseToggle || {}).category" (change)="updateToggleCategory($event.target.value)">
+                        <select id="toggle-category" name="toggle-category" [value]="(releaseToggles.editReleaseToggle | async)?.category" (change)="updateToggleCategory($event.target.value)">
                             <option value="Unity">Unity</option>
                             <option value="Dashboard">Dashboard</option>
                             <option value="Titan">Titan</option>
@@ -16,18 +16,18 @@
 
                 <div class="form-group">
                     <label for="toggle-name">Name</label>
-                    <input id="toggle-name" type="text" placeholder="Name" size="45" [value]="(releaseToggles.editReleaseToggle || {}).name"
+                    <input id="toggle-name" type="text" placeholder="Name" size="45" [value]="(releaseToggles.editReleaseToggle | async)?.name"
                         (keyup)="updateToggleName($event.target.value)">
                 </div>
 
                 <div class="form-group">
                     <label for="toggle-description">Description</label>
-                    <textarea id="toggle-description" rows="5" [value]="(releaseToggles.editReleaseToggle || {}).description" (keyup)="updateToggleDescription($event.target.value)"></textarea>
+                    <textarea id="toggle-description" rows="5" [value]="(releaseToggles.editReleaseToggle | async)?.description" (keyup)="updateToggleDescription($event.target.value)"></textarea>
                 </div>
 
                 <div class="form-group">
                     <div class="toggle-switch">
-                        <input type="checkbox" id="toggle-active" [checked]="(releaseToggles.editReleaseToggle || {}).active" (change)="updateToggleActive()">
+                        <input type="checkbox" id="toggle-active" [checked]="(releaseToggles.editReleaseToggle | async)?.active" (change)="updateToggleActive()">
                         <label for="toggle-active">Active</label>
                     </div>
                 </div>
