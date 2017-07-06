@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ReleaseToggleState} from '../release-toggles.state';
 import {ReleaseTogglesActions} from '../release-toggles.actions';
-import {NgRedux, select} from '@angular-redux/store';
+import {select, dispatch} from '@angular-redux/store';
 import {Observable} from 'rxjs/Observable';
 
 @Component({
@@ -12,31 +12,36 @@ export class ReleaseToggleEditModalComponent {
 
   @select() readonly releaseToggles: Observable<ReleaseToggleState>;
 
-  constructor(private ngRedux: NgRedux<ReleaseToggleState>, private releaseTogglesActions: ReleaseTogglesActions) {
+  constructor(private releaseTogglesActions: ReleaseTogglesActions) {
   }
 
+  @dispatch()
   hideEditToggleModal() {
-    this.ngRedux.dispatch(this.releaseTogglesActions.hideEditToggleModal());
+    return this.releaseTogglesActions.hideEditToggleModal();
   }
 
+  @dispatch()
   updateToggleCategory(value: string) {
-    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleCategoryChange(value));
+    return this.releaseTogglesActions.editToggleCategoryChange(value);
   }
 
+  @dispatch()
   updateToggleName(value: string) {
-    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleNameChange(value));
+    return this.releaseTogglesActions.editToggleNameChange(value);
   }
 
+  @dispatch()
   updateToggleDescription(value: string) {
-    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleDescriptionChange(value));
+    return this.releaseTogglesActions.editToggleDescriptionChange(value);
   }
 
+  @dispatch()
   updateToggleActive() {
-    this.ngRedux.dispatch(this.releaseTogglesActions.editToggleActiveChange());
+    return this.releaseTogglesActions.editToggleActiveChange();
   }
 
+  @dispatch()
   requestToggleEdit() {
-    this.ngRedux.dispatch(this.releaseTogglesActions.requestToggleEdit());
-    this.hideEditToggleModal();
+    return this.releaseTogglesActions.requestToggleEdit();
   }
 }
