@@ -6,7 +6,7 @@ import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {rootReducer} from './root.reducer';
 import {FormsModule} from '@angular/forms';
-import {createEpicMiddleware} from 'redux-observable';
+import {createEpicMiddleware, combineEpics} from 'redux-observable';
 import {environment} from '../environments/environment';
 import {ReleaseTogglesService} from './release-toggles/epics/release-toggles.service';
 import {AppComponent} from './app.component';
@@ -43,8 +43,14 @@ import 'clarity-icons/shapes/essential-shapes';
 export class AppModule {
 
   constructor(private ngRedux: NgRedux<any>, private releaseTogglesEpics: ReleaseTogglesEpics) {
+
+    const epics = combineEpics(
+      this.releaseTogglesEpics.fetchReleaseToggles,
+      this.releaseTogglesEpics.editReleaseToggle
+    );
+
     const middleware = [
-      createEpicMiddleware(this.releaseTogglesEpics.fetchReleaseToggles),
+      createEpicMiddleware(epics),
       createLogger()
     ];
 

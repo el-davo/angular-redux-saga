@@ -46,7 +46,7 @@ export class ReleaseTogglesActions {
     return {type: actionTypes.REQUEST_TOGGLE_EDIT};
   }
 
-  requestToggleEditSuccess() {
-    return {type: actionTypes.REQUEST_TOGGLE_EDIT_SUCCESS};
+  requestToggleEditSuccess(releaseToggle: ReleaseToggle) {
+    return {type: actionTypes.REQUEST_TOGGLE_EDIT_SUCCESS, releaseToggle};
   }
 }

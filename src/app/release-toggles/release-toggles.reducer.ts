@@ -16,7 +16,7 @@ export const releaseTogglesReducer = (state: ReleaseToggleState = releaseToggleS
     case actionTypes.EDIT_TOGGLE_CATEGORY_CHANGE:
       return {...state, editReleaseToggle: {...state.editReleaseToggle, category: action.value}};
     case actionTypes.EDIT_TOGGLE_NAME_CHANGE:
-      return {...state, editReleaseToggle: {...state.editReleaseToggle, name: action.payload}};
+      return {...state, editReleaseToggle: {...state.editReleaseToggle, name: action.value}};
     case actionTypes.EDIT_TOGGLE_DESCRIPTION_CHANGE:
       return {...state, editReleaseToggle: {...state.editReleaseToggle, description: action.value}};
     case actionTypes.EDIT_TOGGLE_ACTIVE_CHANGED:
@@ -25,7 +25,7 @@ export const releaseTogglesReducer = (state: ReleaseToggleState = releaseToggleS
       return {
         ...state,
         releaseToggles: state.releaseToggles.map((releaseToggle) => {
-          return releaseToggle.id === action.payload.id ? action.payload : releaseToggle;
+          return releaseToggle.id === action.releaseToggle.id ? action.releaseToggle : releaseToggle;
         })
       };
     default:
