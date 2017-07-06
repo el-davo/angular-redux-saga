@@ -1,7 +1,5 @@
 <div class="row">
     <div class="col-xs-12">
-      <div>
-      </div>
         <clr-datagrid id="release-toggles-list-table" style="margin: 10px;" [clrDgLoading]="(releaseToggles | async).isFetchingReleaseToggles">
             <clr-dg-column>Category</clr-dg-column>
             <clr-dg-column>Name</clr-dg-column>
@@ -21,7 +19,7 @@
                 </clr-dg-cell>
                 <clr-dg-cell>{{releaseToggle.created}}</clr-dg-cell>
                 <clr-dg-action-overflow>
-                    <button class="action-item" (click)="showEditToggleModal(releaseToggle)">Edit</button>
+                  <button class="action-item" (click)="showEditToggleModal(releaseToggle)">Edit</button>
                 </clr-dg-action-overflow>
             </clr-dg-row>
 
