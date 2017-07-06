@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently --kill-others --raw \"ts-node ./src/stubs/stub-server.ts\" \"ng serve --open\"",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test -sr -cc",
     "test:watch": "ng test -cc",
     "lint": "ng lint",
