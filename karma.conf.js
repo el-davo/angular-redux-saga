@@ -16,10 +16,6 @@ module.exports = config => {
     client: {
       clearContext: false
     },
-    coverageIstanbulReporter: {
-      reports: ['html', 'lcovonly'],
-      fixWebpackSourcePaths: true
-    },
     angularCli: {
       environment: 'dev'
     },
