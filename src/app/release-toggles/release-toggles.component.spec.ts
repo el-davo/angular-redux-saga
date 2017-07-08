@@ -46,4 +46,29 @@ describe('ReleaseTogglesComponent', () => {
     }));
   });
 
+  describe('actions', () => {
+
+    let fetchReleaseTogglesSpy;
+    let showEditToggleModalSpy;
+
+    beforeEach(() => {
+      const releaseTogglesActions = fixture.debugElement.injector.get(ReleaseTogglesActions);
+      fetchReleaseTogglesSpy = spyOn(releaseTogglesActions, 'fetchReleaseToggles');
+      showEditToggleModalSpy = spyOn(releaseTogglesActions, 'showEditToggleModal');
+    });
+
+    it('should request a list of release toggles when component is ready', async(() => {
+      fixture.detectChanges();
+      expect(fetchReleaseTogglesSpy).toHaveBeenCalled();
+    }));
+
+    it('should display the edit release toggle modal', () => {
+      const releaseToggle = {name: 'test'};
+
+      component.showEditToggleModal(releaseToggle);
+
+      expect(showEditToggleModalSpy).toHaveBeenCalledWith(releaseToggle);
+    });
+  });
+
 });
