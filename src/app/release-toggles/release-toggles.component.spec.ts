@@ -35,7 +35,7 @@ describe('ReleaseTogglesComponent', () => {
       expect(compiled.querySelector('clr-datagrid')).toBeTruthy();
     }));
 
-    fit('should show correct data in the table and footer', async(() => {
+    it('should show correct data in the table and footer', async(() => {
       store.next({releaseToggles: [{}, {}]});
       store.complete();
       fixture.detectChanges();
