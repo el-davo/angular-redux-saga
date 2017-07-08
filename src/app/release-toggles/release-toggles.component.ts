@@ -10,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class ReleaseTogglesComponent implements OnInit {
 
-  @select() readonly releaseToggles: Observable<ReleaseToggleState>;
+  @select() releaseToggles: Observable<ReleaseToggleState>;
 
   constructor(private releaseTogglesActions: ReleaseTogglesActions) {
   }

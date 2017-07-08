@@ -1,6 +1,6 @@
-import {ReleaseToggle} from "./release-toggles.state";
-import * as actionTypes from "./release-toggles.action-types";
-import {ReleaseTogglesActions} from "./release-toggles.actions";
+import {ReleaseToggle} from './release-toggles.state';
+import * as actionTypes from './release-toggles.action-types';
+import {ReleaseTogglesActions} from './release-toggles.actions';
 
 describe('Release Toggles Actions', () => {
 
