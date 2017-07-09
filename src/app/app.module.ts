@@ -6,6 +6,7 @@ import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {rootReducer} from './root.reducer';
 import {FormsModule} from '@angular/forms';
+import { NgReduxFormModule } from '@angular-redux/form';
 import {createEpicMiddleware, combineEpics} from 'redux-observable';
 import {environment} from '../environments/environment';
 import {ReleaseTogglesService} from './release-toggles/epics/release-toggles.service';
@@ -31,7 +32,8 @@ import 'clarity-icons/shapes/essential-shapes';
     FormsModule,
     BrowserAnimationsModule,
     ClarityModule.forRoot(),
-    NgReduxModule
+    NgReduxModule,
+    NgReduxFormModule
   ],
   providers: [
     ReleaseTogglesService,
