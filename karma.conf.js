@@ -11,7 +11,7 @@ module.exports = config => {
       'karma-jasmine-html-reporter',
       'karma-coverage-istanbul-reporter',
       '@angular/cli/plugins/karma',
-      'karma-nightmare'
+      'karma-phantomjs-launcher'
     ],
     client: {
       clearContext: false
@@ -24,7 +24,7 @@ module.exports = config => {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Nightmare'],
+    browsers: ['PhantomJS'],
     singleRun: false,
     coverageIstanbulReporter: {
       dir: 'test_results/coverage',
