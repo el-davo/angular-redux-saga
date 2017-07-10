@@ -21,26 +21,6 @@ export class ReleaseToggleEditModalComponent {
   }
 
   @dispatch()
-  updateToggleCategory(value: string) {
-    return this.releaseTogglesActions.editToggleCategoryChange(value);
-  }
-
-  @dispatch()
-  updateToggleName(value: string) {
-    return this.releaseTogglesActions.editToggleNameChange(value);
-  }
-
-  @dispatch()
-  updateToggleDescription(value: string) {
-    return this.releaseTogglesActions.editToggleDescriptionChange(value);
-  }
-
-  @dispatch()
-  updateToggleActive() {
-    return this.releaseTogglesActions.editToggleActiveChange();
-  }
-
-  @dispatch()
   requestToggleEdit() {
     return this.releaseTogglesActions.requestToggleEdit();
   }

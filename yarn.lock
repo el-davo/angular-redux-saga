@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@angular-redux/form@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@angular-redux/form/-/form-6.5.0.tgz#1c9dae68545197fd60915a90b4d89f6a687b9876"
+  dependencies:
+    immutable "^3.8.1"
+
 "@angular-redux/store@^6.5.4":
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/@angular-redux/store/-/store-6.5.4.tgz#23bd4a3171e9afa4ea237c6d7214fd5e94272ba4"
@@ -2521,6 +2527,10 @@ img-stats@^0.5.2:
   resolved "https://registry.yarnpkg.com/img-stats/-/img-stats-0.5.2.tgz#c203496c42f2d9eb2e5ab8232fa756bab32c9e2b"
   dependencies:
     xmldom "^0.1.19"
+
+immutable@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
 imurmurhash@^0.1.4:
   version "0.1.4"

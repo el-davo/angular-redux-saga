@@ -41,19 +41,19 @@ describe('ReleaseToggleEditModal', () => {
     });
 
     it('should have a category select dropdown', () => {
-      expect(compiled.querySelector('select#toggle-category')).toBeTruthy();
+      expect(compiled.querySelector('select#category')).toBeTruthy();
     });
 
     it('should have a name input', () => {
-      expect(compiled.querySelector('input#toggle-name')).toBeTruthy();
+      expect(compiled.querySelector('input#name')).toBeTruthy();
     });
 
     it('should have a description textarea', () => {
-      expect(compiled.querySelector('textarea#toggle-description')).toBeTruthy();
+      expect(compiled.querySelector('textarea#description')).toBeTruthy();
     });
 
     it('should have a toggle', () => {
-      expect(compiled.querySelector('input#toggle-active')).toBeTruthy();
+      expect(compiled.querySelector('input#active')).toBeTruthy();
     });
 
     it('should have a modal footer with correct buttons', () => {
@@ -65,19 +65,11 @@ describe('ReleaseToggleEditModal', () => {
   describe('actions', () => {
 
     let hideEditToggleModalSpy;
-    let editToggleCategoryChangeSpy;
-    let editToggleNameChangeSpy;
-    let editToggleDescriptionChangeSpy;
-    let editToggleActiveChangeSpy;
     let requestToggleEditSpy;
 
     beforeEach(() => {
       const releaseTogglesActions = fixture.debugElement.injector.get(ReleaseTogglesActions);
       hideEditToggleModalSpy = spyOn(releaseTogglesActions, 'hideEditToggleModal');
-      editToggleCategoryChangeSpy = spyOn(releaseTogglesActions, 'editToggleCategoryChange');
-      editToggleNameChangeSpy = spyOn(releaseTogglesActions, 'editToggleNameChange');
-      editToggleDescriptionChangeSpy = spyOn(releaseTogglesActions, 'editToggleDescriptionChange');
-      editToggleActiveChangeSpy = spyOn(releaseTogglesActions, 'editToggleActiveChange');
       requestToggleEditSpy = spyOn(releaseTogglesActions, 'requestToggleEdit');
     });
 
@@ -85,33 +77,6 @@ describe('ReleaseToggleEditModal', () => {
       compiled.querySelectorAll('.modal-footer > button')[0].click();
 
       expect(hideEditToggleModalSpy).toHaveBeenCalled();
-    });
-
-    it('should update category when select is changed', () => {
-      compiled.querySelector('select#toggle-category').value = 'Unity';
-      compiled.querySelector('select#toggle-category').dispatchEvent(new Event('change'));
-
-      expect(editToggleCategoryChangeSpy).toHaveBeenCalledWith('Unity');
-    });
-
-    it('should update name when text is input', () => {
-      compiled.querySelector('input#toggle-name').value = 'test';
-      compiled.querySelector('input#toggle-name').dispatchEvent(new Event('keyup'));
-
-      expect(editToggleNameChangeSpy).toHaveBeenCalledWith('test');
-    });
-
-    it('should update description when text is input', () => {
-      compiled.querySelector('textarea#toggle-description').value = 'test';
-      compiled.querySelector('textarea#toggle-description').dispatchEvent(new Event('keyup'));
-
-      expect(editToggleDescriptionChangeSpy).toHaveBeenCalledWith('test');
-    });
-
-    it('should toggle active on release toggle when clicked', () => {
-      compiled.querySelector('input#toggle-active').dispatchEvent(new Event('click'));
-
-      expect(editToggleActiveChangeSpy).toHaveBeenCalled();
     });
 
     it('should edit the toggle', () => {
