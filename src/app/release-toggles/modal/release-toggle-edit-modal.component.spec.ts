@@ -114,7 +114,7 @@ describe('ReleaseToggleEditModal', () => {
       expect(editToggleActiveChangeSpy).toHaveBeenCalled();
     });
 
-    it('should ', () => {
+    it('should edit the toggle', () => {
       compiled.querySelectorAll('.modal-footer > button')[1].click();
 
       expect(requestToggleEditSpy).toHaveBeenCalled();
