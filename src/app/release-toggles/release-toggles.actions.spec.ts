@@ -34,4 +34,41 @@ describe('Release Toggles Actions', () => {
     });
   });
 
+  it('should hide the edit toggle modal', () => {
+    expect(actions.hideEditToggleModal()).toEqual({type: actionTypes.HIDE_EDIT_TOGGLE_MODAL});
+  });
+
+  it('should edit toggle category', () => {
+    const value = 'abc123';
+    expect(actions.editToggleCategoryChange(value)).toEqual({type: actionTypes.EDIT_TOGGLE_CATEGORY_CHANGE, value});
+  });
+
+  it('should edit toggle name', () => {
+    const value = 'abc123';
+    expect(actions.editToggleNameChange(value)).toEqual({type: actionTypes.EDIT_TOGGLE_NAME_CHANGE, value});
+  });
+
+  it('should edit toggle description', () => {
+    const value = 'abc123';
+    expect(actions.editToggleDescriptionChange(value)).toEqual({
+      type: actionTypes.EDIT_TOGGLE_DESCRIPTION_CHANGE,
+      value
+    });
+  });
+
+  it('should edit toggle active state', () => {
+    expect(actions.editToggleActiveChange()).toEqual({type: actionTypes.EDIT_TOGGLE_ACTIVE_CHANGED});
+  });
+
+  it('should edit toggle', () => {
+    expect(actions.requestToggleEdit()).toEqual({type: actionTypes.REQUEST_TOGGLE_EDIT});
+  });
+
+  it('should let us know when toggle has been edited successfully', () => {
+    const releaseToggle = {active: true} as ReleaseToggle;
+    expect(actions.requestToggleEditSuccess(releaseToggle)).toEqual({
+      type: actionTypes.REQUEST_TOGGLE_EDIT_SUCCESS,
+      releaseToggle
+    });
+  });
 });
