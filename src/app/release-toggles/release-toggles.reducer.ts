@@ -12,15 +12,7 @@ export const releaseTogglesReducer = (state: ReleaseToggleState = releaseToggleS
     case actionTypes.SHOW_EDIT_TOGGLE_MODAL:
       return {...state, showEditToggleModal: true, editReleaseToggle: action.releaseToggle};
     case actionTypes.HIDE_EDIT_TOGGLE_MODAL:
-      return {...state, showEditToggleModal: false, editReleaseToggle: null};
-    case actionTypes.EDIT_TOGGLE_CATEGORY_CHANGE:
-      return {...state, editReleaseToggle: {...state.editReleaseToggle, category: action.value}};
-    case actionTypes.EDIT_TOGGLE_NAME_CHANGE:
-      return {...state, editReleaseToggle: {...state.editReleaseToggle, name: action.value}};
-    case actionTypes.EDIT_TOGGLE_DESCRIPTION_CHANGE:
-      return {...state, editReleaseToggle: {...state.editReleaseToggle, description: action.value}};
-    case actionTypes.EDIT_TOGGLE_ACTIVE_CHANGED:
-      return {...state, editReleaseToggle: {...state.editReleaseToggle, active: !state.editReleaseToggle.active}};
+      return {...state, showEditToggleModal: false, editReleaseToggle: {}};
     case actionTypes.REQUEST_TOGGLE_EDIT_SUCCESS:
       return {
         ...state,

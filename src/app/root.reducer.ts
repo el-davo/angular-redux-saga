@@ -2,6 +2,9 @@ import {releaseTogglesReducer as releaseToggles} from './release-toggles/release
 import {composeReducers, defaultFormReducer} from '@angular-redux/form';
 import {combineReducers} from 'redux';
 
-export const rootReducer = combineReducers({
-  releaseToggles
-});
+export const rootReducer = composeReducers(
+  defaultFormReducer(),
+  combineReducers({
+    releaseToggles
+  })
+);

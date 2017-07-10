@@ -2,7 +2,7 @@ export const releaseToggleState = {
     isFetchingReleaseToggles: false,
     releaseToggles: [],
     showEditToggleModal: false,
-    editReleaseToggle: null
+    editReleaseToggle: {}
 } as ReleaseToggleState;
 
 export interface ReleaseToggleState {

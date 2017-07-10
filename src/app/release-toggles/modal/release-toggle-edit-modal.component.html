@@ -1,13 +1,14 @@
-<clr-modal [clrModalOpen]="(releaseToggles | async).showEditToggleModal">
+<clr-modal [clrModalOpen]="(releaseToggles | async)?.showEditToggleModal">
   <h3 class="modal-title">Edit Toggle</h3>
   <div class="modal-body">
-    <form connect="bla">
+    <form [connect]="['releaseToggles', 'editReleaseToggle']">
       <section class="form-block">
         <div class="form-group">
-          <label for="toggle-category">Category</label>
+          <label for="category">Category</label>
           <div class="select">
-            <select id="toggle-category" name="toggle-category"
-                    [value]="(releaseToggles | async)?.editReleaseToggle?.category">
+            <select id="category"
+                    name="category"
+                    ngModel>
               <option value="Unity">Unity</option>
               <option value="Dashboard">Dashboard</option>
               <option value="Titan">Titan</option>
@@ -16,27 +17,30 @@
         </div>
 
         <div class="form-group">
-          <label for="toggle-name">Name</label>
-          <input id="toggle-name"
-                 name="toggle-name"
+          <label for="name">Name</label>
+          <input id="name"
+                 name="name"
                  type="text"
                  placeholder="Name"
                  size="45"
-                 ngControl
-                 ngModel
-                 [value]="(releaseToggles | async)?.editReleaseToggle?.name">
+                 ngModel>
         </div>
 
         <div class="form-group">
-          <label for="toggle-description">Description</label>
-          <textarea id="toggle-description" rows="5"
-                    [value]="(releaseToggles | async)?.editReleaseToggle?.description"></textarea>
+          <label for="description">Description</label>
+          <textarea id="description"
+                    name="description"
+                    rows="5"
+                    ngModel></textarea>
         </div>
 
         <div class="form-group">
           <div class="toggle-switch">
-            <input type="checkbox" id="toggle-active" [checked]="(releaseToggles | async)?.editReleaseToggle?.active">
-            <label for="toggle-active">Active</label>
+            <input type="checkbox"
+                   id="active"
+                   name="active"
+                   ngModel>
+            <label for="active">Active</label>
           </div>
         </div>
       </section>
