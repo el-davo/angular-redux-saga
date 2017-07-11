@@ -8,6 +8,7 @@ import {rootReducer} from './root.reducer';
 import {FormsModule} from '@angular/forms';
 import { NgReduxFormModule } from '@angular-redux/form';
 import {createEpicMiddleware, combineEpics} from 'redux-observable';
+import * as reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import {environment} from '../environments/environment';
 import {ReleaseTogglesService} from './release-toggles/epics/release-toggles.service';
 import {AppComponent} from './app.component';
@@ -53,7 +54,8 @@ export class AppModule {
 
     const middleware = [
       createEpicMiddleware(epics),
-      createLogger()
+      createLogger(),
+      reduxImmutableStateInvariant.default()
     ];
 
     ngRedux.configureStore(rootReducer, {}, middleware);
