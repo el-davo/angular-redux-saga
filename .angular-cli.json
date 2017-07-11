@@ -42,6 +42,7 @@
   },
   "lint": [
     {
+      "files": "src/**/*.ts",
       "project": "src/tsconfig.app.json"
     },
     {
