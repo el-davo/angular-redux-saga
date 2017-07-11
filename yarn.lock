@@ -1433,10 +1433,6 @@ deep-extend@~0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
 
-deep-freeze-strict@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/deep-freeze-strict/-/deep-freeze-strict-1.1.1.tgz#77d0583ca24a69be4bbd9ac2fae415d55523e5b0"
-
 default-require-extensions@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/default-require-extensions/-/default-require-extensions-1.0.0.tgz#f37ea15d3e13ffd9b437d33e1a75b5fb97874cb8"
@@ -2600,7 +2596,7 @@ interpret@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
 
-invariant@^2.2.0:
+invariant@^2.1.0, invariant@^2.2.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -3008,7 +3004,7 @@ json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
-json-stringify-safe@~5.0.1:
+json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
@@ -3550,12 +3546,6 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
-
-ngrx-store-freeze@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/ngrx-store-freeze/-/ngrx-store-freeze-0.1.9.tgz#b20f18f21fd5efc4e1b1e05f6f279674d0f70c81"
-  dependencies:
-    deep-freeze-strict "^1.1.1"
 
 ngrx-store-logger@^0.1.8:
   version "0.1.8"
@@ -4593,6 +4583,13 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
+
+redux-immutable-state-invariant@^2.0.0:
+  version "2.0.0"
+  resolved "http://10.60.142.218:15000/redux-immutable-state-invariant/-/redux-immutable-state-invariant-2.0.0.tgz#2954debe7a09ceb65cbe398cff785858c8f30404"
+  dependencies:
+    invariant "^2.1.0"
+    json-stringify-safe "^5.0.1"
 
 redux-logger@^3.0.6:
   version "3.0.6"
