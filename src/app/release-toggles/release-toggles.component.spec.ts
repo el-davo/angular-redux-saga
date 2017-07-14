@@ -11,6 +11,7 @@ describe('ReleaseTogglesComponent', () => {
   let store;
 
   beforeEach(async(() => {
+    MockNgRedux.reset();
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
       imports: [NgReduxTestingModule],
@@ -25,7 +26,6 @@ describe('ReleaseTogglesComponent', () => {
     fixture = TestBed.createComponent(ReleaseTogglesComponent);
     component = fixture.debugElement.componentInstance;
     compiled = fixture.debugElement.nativeElement;
-    MockNgRedux.reset();
     store = MockNgRedux.getSelectorStub('releaseToggles');
   }));
 

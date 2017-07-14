@@ -5,8 +5,8 @@ import { Factory } from 'rosie';
 Factory.define('release-toggle')
     .sequence('id')
     .attr('category', 'Dashboard')
-    .attr('name', 'test')
-    .attr('description', 'test description')
+    .attr('name', () => name.findName())
+    .attr('description', () => lorem.paragraph())
     .attr('active', true)
     .attr('created', () => new Date());
 
