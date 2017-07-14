@@ -1,31 +1,36 @@
 <div class="row">
-    <div class="col-xs-12">
-        <clr-datagrid id="release-toggles-list-table" style="margin: 10px;" [clrDgLoading]="(releaseToggles | async)?.isFetchingReleaseToggles">
-            <clr-dg-column>Category</clr-dg-column>
-            <clr-dg-column>Name</clr-dg-column>
-            <clr-dg-column>Description</clr-dg-column>
-            <clr-dg-column>Active</clr-dg-column>
-            <clr-dg-column>Created</clr-dg-column>
+  <div class="col-xs-12">
+    <clr-datagrid id="release-toggles-list-table" style="margin: 10px;"
+                  [clrDgLoading]="(releaseToggles | async)?.isFetchingReleaseToggles">
+      <clr-dg-column>Category</clr-dg-column>
+      <clr-dg-column>Name</clr-dg-column>
+      <clr-dg-column>Description</clr-dg-column>
+      <clr-dg-column>Active</clr-dg-column>
+      <clr-dg-column>Created</clr-dg-column>
 
-            <clr-dg-row *ngFor="let releaseToggle of (releaseToggles | async)?.releaseToggles">
-                <clr-dg-cell>{{releaseToggle.category}}</clr-dg-cell>
-                <clr-dg-cell>{{releaseToggle.name}}</clr-dg-cell>
-                <clr-dg-cell>{{releaseToggle.description}}</clr-dg-cell>
-                <clr-dg-cell>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="toggle-active" [checked]="releaseToggle.active">
-                        <label for="toggle-active"></label>
-                    </div>
-                </clr-dg-cell>
-                <clr-dg-cell>{{releaseToggle.created}}</clr-dg-cell>
-                <clr-dg-action-overflow>
-                  <button class="action-item" (click)="showEditToggleModal(releaseToggle)">Edit</button>
-                </clr-dg-action-overflow>
-            </clr-dg-row>
+      <clr-dg-row *ngFor="let releaseToggle of (releaseToggles | async)?.releaseToggles">
+        <clr-dg-cell>
+          <a [routerLink]="['/release-toggles', releaseToggle.id]">
+            {{releaseToggle.category}}
+          </a>
+        </clr-dg-cell>
+        <clr-dg-cell>{{releaseToggle.name}}</clr-dg-cell>
+        <clr-dg-cell>{{releaseToggle.description}}</clr-dg-cell>
+        <clr-dg-cell>
+          <div class="toggle-switch">
+            <input type="checkbox" id="toggle-active" [checked]="releaseToggle.active">
+            <label for="toggle-active"></label>
+          </div>
+        </clr-dg-cell>
+        <clr-dg-cell>{{releaseToggle.created}}</clr-dg-cell>
+        <clr-dg-action-overflow>
+          <button class="action-item" (click)="showEditToggleModal(releaseToggle)">Edit</button>
+        </clr-dg-action-overflow>
+      </clr-dg-row>
 
-            <clr-dg-footer>{{(releaseToggles | async)?.releaseToggles?.length}} Release Toggles</clr-dg-footer>
-        </clr-datagrid>
-    </div>
+      <clr-dg-footer>{{(releaseToggles | async)?.releaseToggles?.length}} Release Toggles</clr-dg-footer>
+    </clr-datagrid>
+  </div>
 
-    <app-release-toggle-edit-modal></app-release-toggle-edit-modal>
+  <app-release-toggle-edit-modal></app-release-toggle-edit-modal>
 </div>

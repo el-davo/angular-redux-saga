@@ -23,12 +23,16 @@ import {routes} from './routes';
 
 import 'clarity-icons';
 import 'clarity-icons/shapes/essential-shapes';
+import {ReleaseToggleComponent} from './release-toggle/release-toggle.component';
+import {ReleaseToggleEpics} from './release-toggle/epics/release-toggle.epic';
+import {ReleaseToggleActions} from './release-toggle/release-toggle.actions';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReleaseTogglesComponent,
-    ReleaseToggleEditModalComponent
+    ReleaseToggleEditModalComponent,
+    ReleaseToggleComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -44,17 +48,23 @@ import 'clarity-icons/shapes/essential-shapes';
   providers: [
     ReleaseTogglesService,
     ReleaseTogglesActions,
-    ReleaseTogglesEpics
+    ReleaseToggleActions,
+    ReleaseTogglesEpics,
+    ReleaseToggleEpics
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
-  constructor(private ngRedux: NgRedux<any>, private releaseTogglesEpics: ReleaseTogglesEpics, ngReduxRouter: NgReduxRouter) {
+  constructor(private ngRedux: NgRedux<any>,
+              ngReduxRouter: NgReduxRouter,
+              private releaseTogglesEpics: ReleaseTogglesEpics,
+              private releaseToggleEpics: ReleaseToggleEpics) {
 
     const epics = combineEpics(
       this.releaseTogglesEpics.fetchReleaseToggles,
-      this.releaseTogglesEpics.editReleaseToggle
+      this.releaseTogglesEpics.editReleaseToggle,
+      this.releaseToggleEpics.fetchReleaseToggle
     );
 
     const middleware = [

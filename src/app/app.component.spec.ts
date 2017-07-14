@@ -29,8 +29,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('header')).toBeTruthy();
   }));
 
-  it('should render a release toggles component', async(() => {
-    expect(compiled.querySelector('app-release-toggles')).toBeTruthy();
-  }));
-
 });
