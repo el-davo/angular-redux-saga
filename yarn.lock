@@ -8,6 +8,10 @@
   dependencies:
     immutable "^3.8.1"
 
+"@angular-redux/router@^6.3.1":
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/@angular-redux/router/-/router-6.3.1.tgz#847f790b3e3b2d1c8bdad4d4bf3068cd4e0fbf07"
+
 "@angular-redux/store@^6.5.4":
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/@angular-redux/store/-/store-6.5.4.tgz#23bd4a3171e9afa4ea237c6d7214fd5e94272ba4"

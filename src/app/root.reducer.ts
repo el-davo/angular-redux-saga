@@ -1,3 +1,4 @@
+import {routerReducer as router} from '@angular-redux/router';
 import {releaseTogglesReducer as releaseToggles} from './release-toggles/release-toggles.reducer';
 import {composeReducers, defaultFormReducer} from '@angular-redux/form';
 import {combineReducers} from 'redux';
@@ -5,6 +6,7 @@ import {combineReducers} from 'redux';
 export const rootReducer = composeReducers(
   defaultFormReducer(),
   combineReducers({
+    router,
     releaseToggles
   })
 );

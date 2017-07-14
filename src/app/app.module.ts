@@ -3,10 +3,12 @@ import {NgModule} from '@angular/core';
 import {NgReduxModule, NgRedux} from '@angular-redux/store';
 import {createLogger} from 'redux-logger';
 import {HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {rootReducer} from './root.reducer';
 import {FormsModule} from '@angular/forms';
-import { NgReduxFormModule } from '@angular-redux/form';
+import {NgReduxFormModule} from '@angular-redux/form';
+import {NgReduxRouterModule, NgReduxRouter} from '@angular-redux/router';
 import {createEpicMiddleware, combineEpics} from 'redux-observable';
 import * as reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import {environment} from '../environments/environment';
@@ -17,6 +19,7 @@ import {ReleaseToggleEditModalComponent} from './release-toggles/modal/release-t
 import {ClarityModule} from 'clarity-angular';
 import {ReleaseTogglesActions} from './release-toggles/release-toggles.actions';
 import {ReleaseTogglesEpics} from './release-toggles/epics/release-toggles.epic';
+import {routes} from './routes';
 
 import 'clarity-icons';
 import 'clarity-icons/shapes/essential-shapes';
@@ -28,13 +31,15 @@ import 'clarity-icons/shapes/essential-shapes';
     ReleaseToggleEditModalComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     HttpModule,
     FormsModule,
     BrowserAnimationsModule,
     ClarityModule.forRoot(),
     NgReduxModule,
-    NgReduxFormModule
+    NgReduxFormModule,
+    NgReduxRouterModule
   ],
   providers: [
     ReleaseTogglesService,
@@ -45,7 +50,7 @@ import 'clarity-icons/shapes/essential-shapes';
 })
 export class AppModule {
 
-  constructor(private ngRedux: NgRedux<any>, private releaseTogglesEpics: ReleaseTogglesEpics) {
+  constructor(private ngRedux: NgRedux<any>, private releaseTogglesEpics: ReleaseTogglesEpics, ngReduxRouter: NgReduxRouter) {
 
     const epics = combineEpics(
       this.releaseTogglesEpics.fetchReleaseToggles,
@@ -59,6 +64,7 @@ export class AppModule {
     ];
 
     ngRedux.configureStore(rootReducer, {}, middleware);
+    ngReduxRouter.initialize();
   }
 
 }
