@@ -1,3 +1,15 @@
-<p>
-  release-toggle works!
-</p>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          {{(releaseToggle$ | async)?.releaseToggle?.name}}
+        </div>
+        <div class="card-block">
+          <p class="card-text">
+            {{(releaseToggle$ | async)?.releaseToggle?.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
