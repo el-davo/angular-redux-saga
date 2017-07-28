@@ -11,6 +11,7 @@ import {NgReduxFormModule} from '@angular-redux/form';
 import {NgReduxRouterModule, NgReduxRouter} from '@angular-redux/router';
 import {createEpicMiddleware, combineEpics} from 'redux-observable';
 import * as reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
+import * as persistState from 'redux-localstorage'
 import {environment} from '../environments/environment';
 import {ReleaseTogglesService} from './release-toggles/epics/release-toggles.service';
 import {AppComponent} from './app.component';
@@ -73,7 +74,13 @@ export class AppModule {
       reduxImmutableStateInvariant.default()
     ];
 
-    ngRedux.configureStore(rootReducer, {}, middleware);
+    const enhancers = [];
+
+    if (environment.hmr) {
+      enhancers.push(persistState());
+    }
+
+    ngRedux.configureStore(rootReducer, {}, middleware, enhancers);
     ngReduxRouter.initialize();
   }
 
