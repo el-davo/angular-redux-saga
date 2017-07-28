@@ -152,6 +152,10 @@
   dependencies:
     tsickle "^0.21.0"
 
+"@angularclass/hmr@^2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@angularclass/hmr/-/hmr-2.1.3.tgz#34e658ed3da37f23b0a200e2da5a89be92bb209f"
+
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
@@ -881,19 +885,19 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-clarity-angular@^0.9.13:
-  version "0.9.13"
-  resolved "https://registry.yarnpkg.com/clarity-angular/-/clarity-angular-0.9.13.tgz#a2b02e2bcac5eede3e2d81c62a3878b7bdae14dc"
+clarity-angular@^0.9.15:
+  version "0.9.15"
+  resolved "https://registry.yarnpkg.com/clarity-angular/-/clarity-angular-0.9.15.tgz#aa33b2c3baaeab9fe929d78253d3ad888822f4cf"
 
-clarity-icons@^0.9.13:
-  version "0.9.13"
-  resolved "https://registry.yarnpkg.com/clarity-icons/-/clarity-icons-0.9.13.tgz#49c9966209123716c71f709c5bb6fe6fa44e3385"
+clarity-icons@^0.9.15:
+  version "0.9.15"
+  resolved "https://registry.yarnpkg.com/clarity-icons/-/clarity-icons-0.9.15.tgz#168705294653dbf7bd9d137010d9980efaaf1867"
   dependencies:
     dompurify "^0.9.0"
 
-clarity-ui@^0.9.13:
-  version "0.9.13"
-  resolved "https://registry.yarnpkg.com/clarity-ui/-/clarity-ui-0.9.13.tgz#9015c6cc63bb82cf13af84b826ec4391fb24d59a"
+clarity-ui@^0.9.15:
+  version "0.9.15"
+  resolved "https://registry.yarnpkg.com/clarity-ui/-/clarity-ui-0.9.15.tgz#a2337b19acd485492f6ef210c8eef7de160b463f"
 
 clean-css@4.1.x:
   version "4.1.6"
@@ -4588,6 +4592,10 @@ redux-immutable-state-invariant@^2.0.0:
   dependencies:
     invariant "^2.1.0"
     json-stringify-safe "^5.0.1"
+
+redux-localstorage@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/redux-localstorage/-/redux-localstorage-0.4.1.tgz#faf6d719c581397294d811473ffcedee065c933c"
 
 redux-logger@^3.0.6:
   version "3.0.6"
